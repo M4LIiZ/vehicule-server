@@ -1,5 +1,5 @@
 ## Vehicle Server Typescript
-##EMMA-LISE
+
 ### Requirements
 
 - nodejs
@@ -30,7 +30,7 @@ curl -v -XPOST -H "Content-Type: application/json" --data '{"shortcode":"abbc", 
 #### List all Vehicles
 
 ```bash
-curl -v localhost:8080/vehicles
+
 ```
 
 #### Delete a Vehicle
