@@ -1,15 +1,20 @@
-name: Bonjour
+name: Run vehicule server
 on:
   - push
 jobs:
-  dire_bonjour:
+  vehicule_server:
     runs-on: ubuntu-24.04
-    container:
-      image: ghcr.io/cicd-lectures/gitpod:latest 
-      options: --user=root
     steps:
-      - uses: actions/checkout@v5
-      - run: ls -l # Liste les fichier du répertoire courant
-      - run: sudo apt-get install cowsay
-      - run: cat README.md | cowsay # Affiche le contenu du fichier `README.md` à la base du dépôt
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
        
+      - name: install dependecies
+        run: npm ci
+      
+      - name: build
+        run: npm run build
