@@ -6,13 +6,13 @@ jobs:
   vehicle_server:
     runs-on: ubuntu-24.04
     steps:  
-      - name : Checkout
-      - uses: actions/checkout@v5
+      - name: Checkout
+        uses: actions/checkout@v5
       - name: setup
-      - uses: actions/setup-node@v6
+        uses: actions/setup-node@v6
         with:
           node-version: 24
       - name: install dependencies
         run: npm ci
-        name: build 
-      - run: npm run build
+      - name: build 
+        run: npm run build
