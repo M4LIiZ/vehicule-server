@@ -1,13 +1,11 @@
-/*eslint-disable*/
 import {expect, jest, test} from '@jest/globals';
 import { Pool } from 'pg';
-
+import { Request, Response } from 'express';
 
 import { FakeResponse } from "../fake/response";
 import { CreateVehicleController } from "./create";
 import { Vehicle } from "../model/vehicle";
 import { VehicleStore } from "../store/vehicle";
-
 
 // On définit ici un module `Mock` ie: tout chargement du module `import { VehicleStore } from "../store/vehicle'`
 // retournera une """fausse""" implémentation qui  n'intéragit pas avec la base de données.
