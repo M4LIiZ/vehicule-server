@@ -9,8 +9,9 @@ export class DeleteVehicleController {
   constructor(private readonly vehicleStore: VehicleStore) {}
 
   public async handle(req: Request<Parameters>, res: Response): Promise<void> {
-    res.status(500).send();
+    const id = req.params.id 
+    const idnum = parseInt(id)
+    await this.vehicleStore.deleteVehicle({id:idnum})
+    res.status(204).send();
   }
 }
-
-
